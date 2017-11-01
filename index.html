@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>School</title>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+    
+	<!--<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />-->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  
+  </head>
+
+  <body>
+    
+<!-------------- CONTENT --------------------->
+    <!-- Begin page content -->
+    <div class="container-fluid">
+    
+    <!-- top -->
+    <div class="row top">
+
+     <!-- filter -->
+      <div class="col-md-4">
+      
+      </div>
+      <!-- end filter -->
+      <!-- google places -->
+      <div class="col-md-4">
+       <div class="txt">Enter your Zip Code or City to see School near you.</div>
+
+     </div>
+     <!-- end google places -->     
+
+     <!-- search -->
+     <div class="col-md-4">
+      <form class="form-inline" onSubmit="return false;">
+        <div class="form-group">
+          <input type="text" class="ui-autocomplete-input form-control" autocomplete="off" id="addressInput" placeholder="enter your search">
+        </div>
+         <button type="submit" class="btn btn-default" onclick="geocodeThis()">Search</button> <img src="ajax-loader.gif" style="display:none" id="loader">
+      </form>  
+     
+     </div>
+     <!-- end search -->
+    
+    
+    </div><!-- end row -->
+    <!-- end top -->
+    
+    <!-- middle -->
+     <div class="row map_row">
+      <!-- column left -->
+      <!-- column right -->        
+                  
+       <div id="map-canvas"></div>    
+       
+
+      <!-- end column right -->  
+      
+     </div><!-- end row -->
+
+    <!-- bottom -->
+    <div class="row bottom checkbox"> 
+    <div class="col-md-2">
+    <img src="green.png" width="25" height="25">
+    <input id="check1" type="checkbox" name="check" value="Continuing" class="filter" checked>
+    <label for="check1">NOVI FILTER - opet promjena ovdje - 123456</label>
+    </div>    
+    <div class="col-md-2">
+    <img src="green.png" width="25" height="25">
+    <input id="check1" type="checkbox" name="check" value="Continuing" class="filter" checked>
+    <label for="check1">CONTINUING</label>
+    </div>
+    <div class="col-md-2"> 
+    <img src="blue.png" width="25" height="25">
+    <input id="check2" type="checkbox" name="check" value="Provisional" class="filter" checked>
+<label for="check2">PROVISIONAL </label>
+	</div>
+    <div class="col-md-2">
+    <img src="orange.png" width="25" height="25">
+    <input id="check3" type="checkbox" name="check" value="Probationary" class="filter" checked>
+     <label for="check3">PROBATIONARY</label>
+	</div>
+    <div class="col-md-2">
+    <img src="white.png" width="25" height="25">
+    <input id="check4" type="checkbox" name="check" value="Developing-Not Accredited" class="filter" checked>
+     <label for="check4">DEVELOPING</label>
+	</div>    
+    </div>
+    <!-- end bottom -->
+       <div>dakor dodao ovu liniju</div>
+    </div><!-- end container -->
+
+
+   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+   
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>    
+   <script src='js/799a6b7d8e01fb231b5faf503.js'></script>   
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.min.js'></script>
+   <script src="js/index.js"></script>   
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="js/ie10-viewport-bug-workaround.js"></script>-->
+  </body>
+</html>
